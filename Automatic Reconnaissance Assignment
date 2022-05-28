@@ -1,0 +1,11 @@
+echo " Project Name:Reconnissance for Target Domain"
+echo "Please Provide your Domain for Which Reconnissance will be Performed"
+read d
+echo "--First Reconnissance is IP Resolution--"
+nslookup $d
+echo "--Second Reconnissance is WHO-IS?--"
+whois $a -H
+echo "--Third Reconnissance is THE-Harvester--"
+theHarvester -d $d -l 500 -b all -f recon.html
+echo "--Fourth Reconnissance is SUBLIST3R--"
+sublist3r -d $d -o recon.txt
